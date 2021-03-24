@@ -1,0 +1,23 @@
+{
+  "name": "button-onboarding",
+  "version": "1.0.0",
+  "description": "Intro to Button stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pg": "npx postgraphile -c postgres://localhost/todo_app --schema todo_app --watch --dynamic-json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naomiaro/button-onboarding.git"
+  },
+  "author": "Naomi Aro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naomiaro/button-onboarding/issues"
+  },
+  "homepage": "https://github.com/naomiaro/button-onboarding#readme",
+  "dependencies": {
+    "postgraphile": "^4.11.0"
+  }
+}
