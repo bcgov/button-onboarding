@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pg": "npx postgraphile -c postgres://localhost/todo_app --schema todo_app --watch --dynamic-json"
+    "pg": "npx postgraphile -c postgres://localhost/todo_app --schema todo_app --watch --dynamic-json --export-schema-graphql client/data/schema.graphql"
   },
   "repository": {
     "type": "git",
