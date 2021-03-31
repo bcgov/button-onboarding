@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import React from "react";
+// import { graphql, usePreloadedQuery, PreloadedQuery } from "react-relay";
+// import "./App.css";
+// import TodoList from "./TodoList";
+// import { AppQuery } from "./__generated__/AppQuery.graphql";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+// type Props = {
+//   appQueryRef: PreloadedQuery<AppQuery>;
+// };
+
+// export default function App({ appQueryRef }: Props) {
+//   const data = usePreloadedQuery(
+//     graphql`
+//       query AppQuery {
+//         ...TodoList_todos
+//       }
+//     `,
+//     appQueryRef
+//   );
+
+//   // @ts-ignore
+//   return <TodoList todos={data}></TodoList>;
+// }
+
+import React from "react";
+import { useQueryLoader, PreloadedQuery } from "react-relay";
+import "./App.css";
+import MainContent from "./MainContent";
+import MainContentQuery, {
+  MainContentQuery as MainContentQueryType,
+} from "./__generated__/MainContentQuery.graphql";
+
+type Props = {
+  appQueryRef: PreloadedQuery<MainContentQueryType>;
+};
+
+export default function App(props: Props) {
+  const [queryRef] = useQueryLoader<MainContentQueryType>(
+    MainContentQuery,
+    props.appQueryRef /* initial query ref */
   );
-}
 
-export default App;
+  return <MainContent queryRef={queryRef} />;
+}

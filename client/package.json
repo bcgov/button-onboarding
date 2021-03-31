@@ -18,11 +18,11 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "yarn run relay && react-scripts start",
+    "build": "yarn run relay && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "relay": "relay-compiler --src ./src --schema ./data/schema.graphql --extensions js jsx"
+    "relay": "relay-compiler --src ./src --schema ./data/schema.graphql --extensions tsx --language typescript"
   },
   "eslintConfig": {
     "extends": [
@@ -43,9 +43,11 @@
     ]
   },
   "devDependencies": {
+    "@types/react-relay": "^11.0.0",
     "babel-plugin-relay": "^11.0.1",
     "graphql": "^15.5.0",
     "relay-compiler": "^11.0.1",
+    "relay-compiler-language-typescript": "^13.0.6",
     "relay-config": "^11.0.1"
   }
 }
