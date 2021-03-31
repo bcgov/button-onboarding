@@ -1,8 +1,8 @@
 import React from "react";
-import { graphql, usePaginationFragment } from "react-relay";
+import graphql from "babel-plugin-relay/macro";
+import { usePaginationFragment } from "react-relay";
 
 import TodoItem from "./TodoItem";
-
 import { TodoList_todos$key } from "./__generated__/TodoList_todos.graphql";
 
 type Props = {

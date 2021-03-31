@@ -1,5 +1,6 @@
 import React from "react";
-import { graphql, useFragment } from "react-relay";
+import graphql from "babel-plugin-relay/macro";
+import { useFragment } from "react-relay";
 import { TodoItem_todo$key } from "./__generated__/TodoItem_todo.graphql";
 
 export type Props = {

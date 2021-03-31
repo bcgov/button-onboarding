@@ -1,5 +1,6 @@
 import React from "react";
-import { graphql, usePreloadedQuery, PreloadedQuery } from "react-relay";
+import graphql from "babel-plugin-relay/macro";
+import { usePreloadedQuery, PreloadedQuery } from "react-relay";
 import "./App.css";
 import TodoList from "./TodoList";
 import { MainContentQuery } from "./__generated__/MainContentQuery.graphql";
