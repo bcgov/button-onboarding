@@ -4,7 +4,6 @@ import { usePaginationFragment } from "react-relay";
 
 import TodoItem from "./TodoItem";
 import { TodoList_todos$key } from "./__generated__/TodoList_todos.graphql";
-import { TodoItem_todo } from "./__generated__/TodoItem_todo.graphql";
 
 type Props = {
   todos: TodoList_todos$key;
@@ -31,20 +30,16 @@ export default function TodoList(props: Props) {
     props.todos
   );
 
-  const nodes = data?.allTodos?.edges;
-
   return (
-    <>
+    <React.Suspense fallback="Loading">
+      <h1>Todo List</h1>
+      <div>{JSON.stringify(data)}</div>
       <ul>
         {(data.allTodos?.edges ?? []).map((edge) => {
           const node = edge.node;
-          return (
-            <React.Suspense fallback="Loading">
-              <TodoItem todo={node} />
-            </React.Suspense>
-          );
+          return <TodoItem todo={node} />;
         })}
       </ul>
-    </>
+    </React.Suspense>
   );
 }

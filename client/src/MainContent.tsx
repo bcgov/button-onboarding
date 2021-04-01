@@ -19,5 +19,8 @@ export default function MainContent({ queryRef }: Props) {
     queryRef
   );
 
+  console.log("usePreloadedQuery data");
+  console.log(data);
+
   return <TodoList todos={data}></TodoList>;
 }

@@ -1,27 +1,3 @@
-// import React from "react";
-// import { graphql, usePreloadedQuery, PreloadedQuery } from "react-relay";
-// import "./App.css";
-// import TodoList from "./TodoList";
-// import { AppQuery } from "./__generated__/AppQuery.graphql";
-
-// type Props = {
-//   appQueryRef: PreloadedQuery<AppQuery>;
-// };
-
-// export default function App({ appQueryRef }: Props) {
-//   const data = usePreloadedQuery(
-//     graphql`
-//       query AppQuery {
-//         ...TodoList_todos
-//       }
-//     `,
-//     appQueryRef
-//   );
-
-//   // @ts-ignore
-//   return <TodoList todos={data}></TodoList>;
-// }
-
 import React from "react";
 import { useQueryLoader, PreloadedQuery } from "react-relay";
 import "./App.css";

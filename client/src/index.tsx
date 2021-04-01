@@ -9,7 +9,6 @@ import MainContentQuery, {
   MainContentQuery as MainContentQueryType,
 } from "./__generated__/MainContentQuery.graphql";
 
-// At some point during app initialization
 const initialQueryRef = loadQuery<MainContentQueryType>(
   Environment,
   MainContentQuery,
