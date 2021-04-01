@@ -12,15 +12,14 @@ import MainContentQuery, {
 const initialQueryRef = loadQuery<MainContentQueryType>(
   Environment,
   MainContentQuery,
-  {}
+  { count: 2 },
+  { fetchPolicy: "store-or-network" }
 );
 
 ReactDOM.render(
-  <React.StrictMode>
-    <RelayEnvironmentProvider environment={Environment}>
-      <App appQueryRef={initialQueryRef} />
-    </RelayEnvironmentProvider>
-  </React.StrictMode>,
+  <RelayEnvironmentProvider environment={Environment}>
+    <App appQueryRef={initialQueryRef} />
+  </RelayEnvironmentProvider>,
   document.getElementById("root")
 );
 

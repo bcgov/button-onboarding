@@ -17,7 +17,7 @@ export default function TodoList(props: Props) {
       fragment TodoList_todos on Query
       @refetchable(queryName: "TodoListPaginationQuery") {
         allTodos(first: $count, after: $cursor)
-          @connection(key: "TodoList_allTodos") {
+          @connection(key: "TodoList_allTodos", filters: []) {
           edges {
             node {
               id
@@ -31,7 +31,7 @@ export default function TodoList(props: Props) {
   );
 
   return (
-    <React.Suspense fallback="Loading">
+    <>
       <h1>Todo List</h1>
       <div>{JSON.stringify(data)}</div>
       <ul>
@@ -40,6 +40,6 @@ export default function TodoList(props: Props) {
           return <TodoItem todo={node} />;
         })}
       </ul>
-    </React.Suspense>
+    </>
   );
 }
