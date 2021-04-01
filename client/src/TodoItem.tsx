@@ -7,11 +7,13 @@ export type Props = {
   todo: TodoItem_todo$key;
 };
 
+// https://gitmemory.com/issue/facebook/relay/1682/454293013
+
 export default function TodoItem(props: Props) {
   const todo = useFragment(
     graphql`
       fragment TodoItem_todo on Todo {
-        id
+        todoId: id
         task
         completed
       }

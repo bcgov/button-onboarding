@@ -27,7 +27,7 @@ query MainContentQuery(
 }
 
 fragment TodoItem_todo on Todo {
-  id
+  todoId: id
   task
   completed
 }
@@ -36,7 +36,7 @@ fragment TodoList_todos on Query {
   allTodos(first: $count, after: $cursor) {
     edges {
       node {
-        id
+        todoId: id
         ...TodoItem_todo
         __typename
       }
@@ -122,7 +122,7 @@ return {
                 "plural": false,
                 "selections": [
                   {
-                    "alias": null,
+                    "alias": "todoId",
                     "args": null,
                     "kind": "ScalarField",
                     "name": "id",
@@ -193,7 +193,7 @@ return {
       {
         "alias": null,
         "args": (v1/*: any*/),
-        "filters": null,
+        "filters": [],
         "handle": "connection",
         "key": "TodoList_allTodos",
         "kind": "LinkedHandle",
@@ -202,12 +202,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "28c0d63c9dca00c865ae6b865581f8c3",
+    "cacheID": "6185d5bb4d0092ef646801780f2af39b",
     "id": null,
     "metadata": {},
     "name": "MainContentQuery",
     "operationKind": "query",
-    "text": "query MainContentQuery(\n  $count: Int\n  $cursor: Cursor\n) {\n  ...TodoList_todos\n}\n\nfragment TodoItem_todo on Todo {\n  id\n  task\n  completed\n}\n\nfragment TodoList_todos on Query {\n  allTodos(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...TodoItem_todo\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
+    "text": "query MainContentQuery(\n  $count: Int\n  $cursor: Cursor\n) {\n  ...TodoList_todos\n}\n\nfragment TodoItem_todo on Todo {\n  todoId: id\n  task\n  completed\n}\n\nfragment TodoList_todos on Query {\n  allTodos(first: $count, after: $cursor) {\n    edges {\n      node {\n        todoId: id\n        ...TodoItem_todo\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
   }
 };
 })();

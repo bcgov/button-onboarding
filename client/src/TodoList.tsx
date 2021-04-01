@@ -9,7 +9,7 @@ type Props = {
   todos: TodoList_todos$key;
 };
 
-// https://relay.dev/docs/guided-tour/refetching/refetching-queries-with-different-data/#if-you-need-to-avoid-suspense
+// https://gitmemory.com/issue/facebook/relay/1682/454293013
 
 export default function TodoList(props: Props) {
   const { data } = usePaginationFragment(
@@ -20,7 +20,7 @@ export default function TodoList(props: Props) {
           @connection(key: "TodoList_allTodos", filters: []) {
           edges {
             node {
-              id
+              todoId: id
               ...TodoItem_todo
             }
           }

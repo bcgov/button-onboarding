@@ -27,7 +27,7 @@ query TodoListPaginationQuery(
 }
 
 fragment TodoItem_todo on Todo {
-  id
+  todoId: id
   task
   completed
 }
@@ -36,7 +36,7 @@ fragment TodoList_todos on Query {
   allTodos(first: $count, after: $cursor) {
     edges {
       node {
-        id
+        todoId: id
         ...TodoItem_todo
         __typename
       }
@@ -122,7 +122,7 @@ return {
                 "plural": false,
                 "selections": [
                   {
-                    "alias": null,
+                    "alias": "todoId",
                     "args": null,
                     "kind": "ScalarField",
                     "name": "id",
@@ -193,7 +193,7 @@ return {
       {
         "alias": null,
         "args": (v1/*: any*/),
-        "filters": null,
+        "filters": [],
         "handle": "connection",
         "key": "TodoList_allTodos",
         "kind": "LinkedHandle",
@@ -202,14 +202,14 @@ return {
     ]
   },
   "params": {
-    "cacheID": "d0df67c7fa50de067ec237c7163eb281",
+    "cacheID": "8afd8fc7d66a712584dd867b3c01747b",
     "id": null,
     "metadata": {},
     "name": "TodoListPaginationQuery",
     "operationKind": "query",
-    "text": "query TodoListPaginationQuery(\n  $count: Int\n  $cursor: Cursor\n) {\n  ...TodoList_todos\n}\n\nfragment TodoItem_todo on Todo {\n  id\n  task\n  completed\n}\n\nfragment TodoList_todos on Query {\n  allTodos(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...TodoItem_todo\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
+    "text": "query TodoListPaginationQuery(\n  $count: Int\n  $cursor: Cursor\n) {\n  ...TodoList_todos\n}\n\nfragment TodoItem_todo on Todo {\n  todoId: id\n  task\n  completed\n}\n\nfragment TodoList_todos on Query {\n  allTodos(first: $count, after: $cursor) {\n    edges {\n      node {\n        todoId: id\n        ...TodoItem_todo\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = 'b942ea31bfc17cde88c41a1bf756f6ba';
+(node as any).hash = '1d78a2f72e848c2a1ab7d9385a2086e8';
 export default node;

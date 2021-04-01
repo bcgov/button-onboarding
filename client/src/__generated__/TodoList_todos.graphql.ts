@@ -8,7 +8,7 @@ export type TodoList_todos = {
     readonly allTodos: {
         readonly edges: ReadonlyArray<{
             readonly node: {
-                readonly id: number;
+                readonly todoId: number;
                 readonly " $fragmentRefs": FragmentRefs<"TodoItem_todo">;
             } | null;
         }>;
@@ -88,7 +88,7 @@ return {
               "plural": false,
               "selections": [
                 {
-                  "alias": null,
+                  "alias": "todoId",
                   "args": null,
                   "kind": "ScalarField",
                   "name": "id",
@@ -152,5 +152,5 @@ return {
   "abstractKey": null
 };
 })();
-(node as any).hash = 'b942ea31bfc17cde88c41a1bf756f6ba';
+(node as any).hash = '1d78a2f72e848c2a1ab7d9385a2086e8';
 export default node;
