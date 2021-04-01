@@ -12,7 +12,7 @@ type Props = {
 export default function MainContent({ queryRef }: Props) {
   const data = usePreloadedQuery(
     graphql`
-      query MainContentQuery {
+      query MainContentQuery($count: Int, $cursor: Cursor) {
         ...TodoList_todos
       }
     `,

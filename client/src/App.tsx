@@ -40,5 +40,9 @@ export default function App(props: Props) {
     props.appQueryRef /* initial query ref */
   );
 
-  return <MainContent queryRef={queryRef} />;
+  return (
+    <React.Suspense fallback="Loading query...">
+      <MainContent queryRef={queryRef} />
+    </React.Suspense>
+  );
 }

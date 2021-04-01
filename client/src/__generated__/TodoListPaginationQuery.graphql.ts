@@ -4,22 +4,22 @@
 
 import { ConcreteRequest } from "relay-runtime";
 import { FragmentRefs } from "relay-runtime";
-export type MainContentQueryVariables = {
+export type TodoListPaginationQueryVariables = {
     count?: number | null;
     cursor?: unknown | null;
 };
-export type MainContentQueryResponse = {
+export type TodoListPaginationQueryResponse = {
     readonly " $fragmentRefs": FragmentRefs<"TodoList_todos">;
 };
-export type MainContentQuery = {
-    readonly response: MainContentQueryResponse;
-    readonly variables: MainContentQueryVariables;
+export type TodoListPaginationQuery = {
+    readonly response: TodoListPaginationQueryResponse;
+    readonly variables: TodoListPaginationQueryVariables;
 };
 
 
 
 /*
-query MainContentQuery(
+query TodoListPaginationQuery(
   $count: Int
   $cursor: Cursor
 ) {
@@ -80,7 +80,7 @@ return {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Fragment",
     "metadata": null,
-    "name": "MainContentQuery",
+    "name": "TodoListPaginationQuery",
     "selections": [
       {
         "args": null,
@@ -95,7 +95,7 @@ return {
   "operation": {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Operation",
-    "name": "MainContentQuery",
+    "name": "TodoListPaginationQuery",
     "selections": [
       {
         "alias": null,
@@ -202,14 +202,14 @@ return {
     ]
   },
   "params": {
-    "cacheID": "28c0d63c9dca00c865ae6b865581f8c3",
+    "cacheID": "d0df67c7fa50de067ec237c7163eb281",
     "id": null,
     "metadata": {},
-    "name": "MainContentQuery",
+    "name": "TodoListPaginationQuery",
     "operationKind": "query",
-    "text": "query MainContentQuery(\n  $count: Int\n  $cursor: Cursor\n) {\n  ...TodoList_todos\n}\n\nfragment TodoItem_todo on Todo {\n  id\n  task\n  completed\n}\n\nfragment TodoList_todos on Query {\n  allTodos(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...TodoItem_todo\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
+    "text": "query TodoListPaginationQuery(\n  $count: Int\n  $cursor: Cursor\n) {\n  ...TodoList_todos\n}\n\nfragment TodoItem_todo on Todo {\n  id\n  task\n  completed\n}\n\nfragment TodoList_todos on Query {\n  allTodos(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...TodoItem_todo\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = 'a37e90a5f5944c77961c8f3cc19d277d';
+(node as any).hash = 'b942ea31bfc17cde88c41a1bf756f6ba';
 export default node;

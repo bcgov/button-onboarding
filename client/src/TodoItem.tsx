@@ -19,5 +19,5 @@ export default function TodoItem(props: Props) {
     props.todo
   );
 
-  return <div>{todo.task}</div>;
+  return <li>{todo.task}</li>;
 }
