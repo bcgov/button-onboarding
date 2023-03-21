@@ -1,0 +1,5 @@
+%syntax-version=1.0.0
+%project=schema
+%uri=https://github.com/JoshLarouche/cas-onboarding/
+
+appschema 2023-03-20T22:06:14Z JoshLarouche <joshua.t.larouche@gmail.com> # Add schema for all cas_onboarding objects.
