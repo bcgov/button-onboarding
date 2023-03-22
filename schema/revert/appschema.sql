@@ -3,6 +3,6 @@
 BEGIN;
 
 -- XXX Add DDLs here.
-DROP SCHEMA cas_onboarding;
+DROP SCHEMA todo;
 
 COMMIT;

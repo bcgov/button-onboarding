@@ -3,6 +3,6 @@
 BEGIN;
 
 -- XXX Add DDLs here.
-CREATE SCHEMA cas_onboarding;
+CREATE SCHEMA todo;
 
 COMMIT;
