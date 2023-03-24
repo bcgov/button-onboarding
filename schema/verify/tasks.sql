@@ -4,7 +4,7 @@ BEGIN;
 
 -- XXX Add verifications here.
 SELECT id, task, completed, date_created, date_updated
-  FROM todo_app.tasks
+ FROM todo_app.tasks
  WHERE FALSE;
 
 ROLLBACK;

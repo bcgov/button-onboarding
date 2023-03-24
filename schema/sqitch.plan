@@ -4,3 +4,4 @@
 
 todo_appschema 2023-03-23T16:20:40Z JoshLarouche <joshua.t.larouche@gmail.com> # Add schema for all todo objects.
 tasks [todo_appschema] 2023-03-24T15:21:51Z JoshLarouche <joshua.t.larouche@gmail.com> # Creates table to track our tasks.
+insert_seed_data [todo_appschema] 2023-03-24T15:53:29Z JoshLarouche <joshua.t.larouche@gmail.com> # Inserts seed data into tasks table.
