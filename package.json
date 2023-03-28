@@ -1,0 +1,20 @@
+{
+  "name": "cas-onboarding",
+  "version": "1.0.0",
+  "description": "Onboarding todo app package.json file",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx postgraphile -c todo_app_db -s todo_app --enhance-graphiql -a -j --port 5001 --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshLarouche/cas-onboarding.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshLarouche/cas-onboarding/issues"
+  },
+  "homepage": "https://github.com/JoshLarouche/cas-onboarding#readme"
+}
