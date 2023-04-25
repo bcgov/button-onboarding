@@ -7,23 +7,14 @@ import {
   usePreloadedQuery,
 } from 'react-relay/hooks';
 import RelayEnvironment from './RelayEnvironment';
+import TodoList from './components/TodoList';
 
 const { Suspense } = React;
 
 // Define a query
 const AllTasksQuery = graphql`
   query AppQuery {
-  allTasks {
-    edges {
-      node {
-        id
-        completed
-        dateCreated
-        dateUpdated
-        task
-      }
-    }
-  }
+    ...TodoList_query
 }
 `;
 
@@ -47,7 +38,7 @@ function App(props: any) {
   return (
     <div className="App">
       <header className="App-header">
-      <p>{data.allTasks.edges[0].node}</p>
+        <TodoList query={data} />
       </header>
     </div>
   );
@@ -58,7 +49,7 @@ function App(props: any) {
 // - <RelayEnvironmentProvider> tells child components how to talk to the current
 //   Relay Environment instance
 // - <Suspense> specifies a fallback in case a child suspends.
-function AppRoot(props: any) {
+function AppRoot() {
   return (
     <RelayEnvironmentProvider environment={RelayEnvironment}>
       <Suspense fallback={'Loading...'}>

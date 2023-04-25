@@ -1,8 +1,8 @@
 -- Revert schema:insert_seed_data from pg
 
-BEGIN;
+begin;
 
 -- XXX Add DDLs here.
-TRUNCATE TABLE todo_app.tasks;
+truncate table todo_app.tasks;
 
-COMMIT;
+commit;

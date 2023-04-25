@@ -1,16 +1,16 @@
 -- Deploy schema:tasks to pg
 -- requires: todo_appschema
 
-BEGIN;
+begin;
 
-SET client_min_messages = 'warning';
+set client_min_messages = 'warning';
 
-CREATE TABLE todo_app.tasks (
-    id           INTEGER     PRIMARY KEY,
-    task         TEXT        NOT NULL,
-    completed    BOOLEAN     NOT NULL DEFAULT FALSE,
-    date_created TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    date_updated TIMESTAMPTZ NOT NULL DEFAULT NOW()
+create table todo_app.tasks (
+    id           integer     primary key,
+    task         text        not null,
+    completed    boolean     not null default false,
+    date_created timestamp not null default now(),
+    date_updated timestamp not null default now()
 );
 
-COMMIT;
+commit;

@@ -1,8 +1,8 @@
 -- Revert schema:todo_appschema from pg
 
-BEGIN;
+begin;
 
 -- XXX Add DDLs here.
-DROP SCHEMA todo_app;
+drop schema todo_app;
 
-COMMIT;
+commit;

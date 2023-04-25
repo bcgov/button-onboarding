@@ -2,12 +2,12 @@
 -- requires: todo_appschema
 -- requires: tasks
 
-BEGIN;
+begin;
 
 -- XXX Add DDLs here.
-INSERT INTO
+insert into
      todo_app.tasks (id, task, completed)
- VALUES
+ values
      (1, 'Make bed', false),
      (2, 'Shower', false),
      (3, 'Write todo list', true),
@@ -16,4 +16,4 @@ INSERT INTO
      (6, 'Buy groceries', false),
      (7, 'Feed dog', true);
 
-COMMIT;
+commit;

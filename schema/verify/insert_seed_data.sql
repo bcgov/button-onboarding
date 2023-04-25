@@ -1,9 +1,9 @@
 -- Verify schema:insert_seed_data on pg
 
-BEGIN;
+begin;
 
 -- XXX Add verifications here.
-SELECT id, task, completed, date_created, date_updated 
- FROM todo_app.tasks;
+select id, task, completed, date_created, date_updated 
+ from todo_app.tasks;
 
-ROLLBACK;
+rollback;

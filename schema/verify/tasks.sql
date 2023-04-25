@@ -1,10 +1,10 @@
 -- Verify schema:todo on pg
 
-BEGIN;
+begin;
 
 -- XXX Add verifications here.
-SELECT id, task, completed, date_created, date_updated
- FROM todo_app.tasks
- WHERE FALSE;
+select id, task, completed, date_created, date_updated
+ from todo_app.tasks
+ where false;
 
-ROLLBACK;
+rollback;
