@@ -13,7 +13,7 @@ const mutation = graphql`
   }
 `;
 
-const commit = (id: string, completed: boolean) => {
+const commitTodoCompletedMutation = (id: string, completed: boolean) => {
   return commitMutation(RelayEnvironment, {
     mutation,
     variables: { input: { taskPatch: { completed }, id } },
@@ -22,4 +22,4 @@ const commit = (id: string, completed: boolean) => {
   });
 };
 
-export default { commit };
+export default commitTodoCompletedMutation;

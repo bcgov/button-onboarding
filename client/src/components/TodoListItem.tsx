@@ -1,7 +1,7 @@
 import { graphql } from "babel-plugin-relay/macro";
 import { useFragment, commitMutation } from 'react-relay/hooks';
 import type { TodoListItem_todo$key } from "./__generated__/TodoListItem_todo.graphql";
-import TodoCompletedMutation from "./mutations/TodoCompletedMutation";
+import commitTodoCompletedMutation from "./mutations/TodoCompletedMutation";
 
 // MUI imports
 import Checkbox from "@mui/material/Checkbox";
@@ -25,7 +25,7 @@ export default function TodoListItem(props: any) {
   );
 
   const handleChange = () => {
-    TodoCompletedMutation.commit(data.id, !data.completed);
+    commitTodoCompletedMutation(data.id, !data.completed);
   };
 
   return (

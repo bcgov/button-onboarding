@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<1b488cdf77ee0f18250d696354eded01>>
+ * @generated SignedSource<<e9d48b0a283593a937b8e68642e45000>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -29,6 +29,7 @@ export type NewTodoMutation$data = {
     readonly taskEdge: {
       readonly node: {
         readonly id: string;
+        readonly rowId: number;
         readonly task: string;
       } | null;
     } | null;
@@ -80,6 +81,13 @@ v2 = {
           "args": null,
           "kind": "ScalarField",
           "name": "id",
+          "storageKey": null
+        },
+        {
+          "alias": null,
+          "args": null,
+          "kind": "ScalarField",
+          "name": "rowId",
           "storageKey": null
         },
         {
@@ -155,16 +163,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "45036eb13a8811fec0af9a169fe7dbbd",
+    "cacheID": "fb21ff2f2a016e76211395584fbcf3a9",
     "id": null,
     "metadata": {},
     "name": "NewTodoMutation",
     "operationKind": "mutation",
-    "text": "mutation NewTodoMutation(\n  $input: CreateTaskInput!\n) {\n  createTask(input: $input) {\n    taskEdge {\n      node {\n        id\n        task\n      }\n    }\n  }\n}\n"
+    "text": "mutation NewTodoMutation(\n  $input: CreateTaskInput!\n) {\n  createTask(input: $input) {\n    taskEdge {\n      node {\n        id\n        rowId\n        task\n      }\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "58c38af318f6c1626658920ac781cb5b";
+(node as any).hash = "5e90dd1d5c085fcbed21bfae9579518c";
 
 export default node;

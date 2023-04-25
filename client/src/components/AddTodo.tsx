@@ -1,9 +1,9 @@
 import { Button, Grid, TextField } from "@mui/material";
 import { useState } from "react";
-import NewTodoMutation from "./mutations/NewTodoMutation";
+import commitNewTodoMutation from "./mutations/NewTodoMutation";
 
 
-export default function AddTask(props: any) {
+export default function AddTodo(props: any) {
 
     const [newTask, setNewTask] = useState<string>("");
 
@@ -11,7 +11,7 @@ export default function AddTask(props: any) {
     event.preventDefault();
     if (newTask) {
       const trimmedText = newTask.trim();
-      NewTodoMutation.commit(trimmedText, props.connectionId);
+      commitNewTodoMutation(trimmedText, props.connectionId);
       setNewTask("");
     }
   };

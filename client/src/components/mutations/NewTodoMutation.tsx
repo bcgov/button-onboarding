@@ -1,6 +1,8 @@
 import { graphql } from "babel-plugin-relay/macro";
-import { commitMutation } from "relay-runtime";
+import { commitMutation, ConnectionHandler } from "relay-runtime";
 import RelayEnvironment from "../../RelayEnvironment";
+
+const connectionId = ConnectionHandler.getConnectionID('root', 'connection_allTodos')
 
 const mutation = graphql`
   mutation NewTodoMutation($connections: [ID!]!, $input: CreateTaskInput!) {
@@ -8,6 +10,7 @@ const mutation = graphql`
       taskEdge @appendEdge(connections: $connections) {
         node {
           id
+          rowId
           task
         }
       }
@@ -15,7 +18,7 @@ const mutation = graphql`
   }
 `;
 
-const commit = (task: any, connectionId: any) => {
+const commitNewTodoMutation = (task: any, connectionId: any) => {
   return commitMutation(RelayEnvironment, {
     mutation,
     variables: {
@@ -33,4 +36,4 @@ const commit = (task: any, connectionId: any) => {
   });
 };
 
-export default commit;
+export default commitNewTodoMutation;

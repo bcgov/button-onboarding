@@ -1,7 +1,7 @@
 import { graphql } from "babel-plugin-relay/macro";
 import TodoListItem from "./TodoListItem";
 import { useFragment } from "react-relay/hooks";
-import AddTask from "./AddTodo";
+import AddTodo from "./AddTodo";
 
 // MUI imports
 import Card from "@mui/material/Card";
@@ -44,7 +44,7 @@ export default function TodoList(props: Props) {
           <Grid item xs={8} style={{ boxShadow: "5px 10px grey", minWidth: "22rem" }}>
             <Card sx={{ border: 1 }}>
               <CardContent>{list}</CardContent>
-              <AddTask connectionId={data.allTasks.__id} />
+              <AddTodo connectionId={data.allTasks.__id} />
             </Card>
           </Grid>
         </Grid>
