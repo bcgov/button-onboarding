@@ -30,7 +30,7 @@ export default function TodoList(props: Props) {
     props.query
     );
 
-    const list = data.allTasks.edges.map((edge: any) => <TodoListItem task={edge.node} key={edge.node.id} />);
+    const list = data.allTasks.edges.map((edge: any) => <TodoListItem connectionId={data.allTasks.__id} task={edge.node} key={edge.node.id} />);
 
     return (
         <Grid

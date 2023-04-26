@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<f5bf8a8c8bc7e360a1dffc65e5fca7b8>>
+ * @generated SignedSource<<6eb9d01a12521c720c0f926dd6820849>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -78,6 +78,13 @@ return {
                     "args": null,
                     "kind": "ScalarField",
                     "name": "id",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "rowId",
                     "storageKey": null
                   },
                   {
@@ -166,12 +173,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "92f480091e6562328ca815a673f0de9e",
+    "cacheID": "e4e0a51e6280abeaccf8c5b601e98b46",
     "id": null,
     "metadata": {},
     "name": "AppQuery",
     "operationKind": "query",
-    "text": "query AppQuery {\n  ...TodoList_query\n}\n\nfragment TodoListItem_todo on Task {\n  id\n  task\n  completed\n}\n\nfragment TodoList_query on Query {\n  allTasks(first: 200) {\n    edges {\n      node {\n        id\n        ...TodoListItem_todo\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
+    "text": "query AppQuery {\n  ...TodoList_query\n}\n\nfragment TodoListItem_todo on Task {\n  id\n  rowId\n  task\n  completed\n}\n\nfragment TodoList_query on Query {\n  allTasks(first: 200) {\n    edges {\n      node {\n        id\n        ...TodoListItem_todo\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
   }
 };
 })();

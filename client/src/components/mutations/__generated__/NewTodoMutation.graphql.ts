@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e9d48b0a283593a937b8e68642e45000>>
+ * @generated SignedSource<<1adaff24c1ef52a8565271adfd331869>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,6 +9,7 @@
 // @ts-nocheck
 
 import { ConcreteRequest, Mutation } from 'relay-runtime';
+import { FragmentRefs } from "relay-runtime";
 export type CreateTaskInput = {
   clientMutationId?: string | null;
   task: TaskInput;
@@ -28,9 +29,7 @@ export type NewTodoMutation$data = {
   readonly createTask: {
     readonly taskEdge: {
       readonly node: {
-        readonly id: string;
-        readonly rowId: number;
-        readonly task: string;
+        readonly " $fragmentSpreads": FragmentRefs<"TodoListItem_todo">;
       } | null;
     } | null;
   } | null;
@@ -59,50 +58,7 @@ v1 = [
     "name": "input",
     "variableName": "input"
   }
-],
-v2 = {
-  "alias": null,
-  "args": null,
-  "concreteType": "TasksEdge",
-  "kind": "LinkedField",
-  "name": "taskEdge",
-  "plural": false,
-  "selections": [
-    {
-      "alias": null,
-      "args": null,
-      "concreteType": "Task",
-      "kind": "LinkedField",
-      "name": "node",
-      "plural": false,
-      "selections": [
-        {
-          "alias": null,
-          "args": null,
-          "kind": "ScalarField",
-          "name": "id",
-          "storageKey": null
-        },
-        {
-          "alias": null,
-          "args": null,
-          "kind": "ScalarField",
-          "name": "rowId",
-          "storageKey": null
-        },
-        {
-          "alias": null,
-          "args": null,
-          "kind": "ScalarField",
-          "name": "task",
-          "storageKey": null
-        }
-      ],
-      "storageKey": null
-    }
-  ],
-  "storageKey": null
-};
+];
 return {
   "fragment": {
     "argumentDefinitions": (v0/*: any*/),
@@ -118,7 +74,33 @@ return {
         "name": "createTask",
         "plural": false,
         "selections": [
-          (v2/*: any*/)
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "TasksEdge",
+            "kind": "LinkedField",
+            "name": "taskEdge",
+            "plural": false,
+            "selections": [
+              {
+                "alias": null,
+                "args": null,
+                "concreteType": "Task",
+                "kind": "LinkedField",
+                "name": "node",
+                "plural": false,
+                "selections": [
+                  {
+                    "args": null,
+                    "kind": "FragmentSpread",
+                    "name": "TodoListItem_todo"
+                  }
+                ],
+                "storageKey": null
+              }
+            ],
+            "storageKey": null
+          }
         ],
         "storageKey": null
       }
@@ -140,7 +122,56 @@ return {
         "name": "createTask",
         "plural": false,
         "selections": [
-          (v2/*: any*/),
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "TasksEdge",
+            "kind": "LinkedField",
+            "name": "taskEdge",
+            "plural": false,
+            "selections": [
+              {
+                "alias": null,
+                "args": null,
+                "concreteType": "Task",
+                "kind": "LinkedField",
+                "name": "node",
+                "plural": false,
+                "selections": [
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "id",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "rowId",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "task",
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "completed",
+                    "storageKey": null
+                  }
+                ],
+                "storageKey": null
+              }
+            ],
+            "storageKey": null
+          },
           {
             "alias": null,
             "args": null,
@@ -163,16 +194,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "fb21ff2f2a016e76211395584fbcf3a9",
+    "cacheID": "9b22d8f0e477f02c02db72d5c2eeeed3",
     "id": null,
     "metadata": {},
     "name": "NewTodoMutation",
     "operationKind": "mutation",
-    "text": "mutation NewTodoMutation(\n  $input: CreateTaskInput!\n) {\n  createTask(input: $input) {\n    taskEdge {\n      node {\n        id\n        rowId\n        task\n      }\n    }\n  }\n}\n"
+    "text": "mutation NewTodoMutation(\n  $input: CreateTaskInput!\n) {\n  createTask(input: $input) {\n    taskEdge {\n      node {\n        ...TodoListItem_todo\n        id\n      }\n    }\n  }\n}\n\nfragment TodoListItem_todo on Task {\n  id\n  rowId\n  task\n  completed\n}\n"
   }
 };
 })();
 
-(node as any).hash = "5e90dd1d5c085fcbed21bfae9579518c";
+(node as any).hash = "55930787ab54bcbe08c88ff14b65abf0";
 
 export default node;
