@@ -6,14 +6,14 @@ begin;
 
 -- XXX Add DDLs here.
 insert into
-     todo_app.tasks (id, task, completed)
+     todo_app.tasks (task, completed)
  values
-     (1, 'Make bed', false),
-     (2, 'Shower', false),
-     (3, 'Write todo list', true),
-     (4, 'Learn to hack', false),
-     (5, 'Lunch with Julia', false),
-     (6, 'Buy groceries', false),
-     (7, 'Feed dog', true);
+     ('Make bed', false),
+     ('Shower', false),
+     ('Write todo list', true),
+     ('Learn to hack', false),
+     ('Lunch with Julia', false),
+     ('Buy groceries', false),
+     ('Feed dog', true);
 
 commit;

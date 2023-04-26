@@ -6,7 +6,7 @@ begin;
 set client_min_messages = 'warning';
 
 create table todo_app.tasks (
-    id           integer     primary key,
+    id           serial      primary key,
     task         text        not null,
     completed    boolean     not null default false,
     date_created timestamp not null default now(),
