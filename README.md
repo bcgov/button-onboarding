@@ -89,6 +89,8 @@ As a user, I can:
 
 2. Add [Relay](https://relay.dev/) to the client.
 
+  - `npm create @tobiastengler/relay-app`
+
 ## Step 4: Build TodoList components
 
 1. Build `TodoList` and `TodoListItem` components, each using a [Relay fragment](https://relay.dev/docs/guided-tour/rendering/fragments/) for data.
