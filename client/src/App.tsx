@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import graphql from 'babel-plugin-relay/macro'
 import './App.css';
 
 function App() {
