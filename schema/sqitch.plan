@@ -1,0 +1,7 @@
+%syntax-version=1.0.0
+%project=todo
+%uri=https://github.com/andrea-williams/cas-onboarding
+
+appschema 2023-06-06T00:09:56Z Andrea <Andrea.Williams@gov.bc.ca> # Add schema for todo objects.
+todos [appschema] 2023-06-10T00:04:30Z Andrea <Andrea.Williams@gov.bc.ca> # Creates table to track todo objects.
+dummy_data [todos] 2023-06-19T20:52:38Z Andrea <Andrea.Williams@gov.bc.ca> # Populates todo table with dummy data
