@@ -59,9 +59,27 @@ As a user, I can:
 
 1. `npm init` to initialize a `package.json` for the project.
 2. Install [Postgraphile](https://www.graphile.org/postgraphile/) and run it pointing at the project's database.
-      - command used: `npx postgraphile -c postgresql://awilliam@localhost:5432/todo --watch`
+      - command used: `npx postgraphile -c postgresql://awilliam@localhost:5432/todo --schema todo_app --watch`
 3. Open the Graphiql (a graphical UI for GraphQL queries) instance that should be live at `/graphiql` on localhost once Postgraphile is running.
 4. Confirm that GraphQL is introspecting your Postgres schema by querying the todos you inserted in the previous step.
+      - query used in /graphiql:
+        ```
+        {
+          query {
+           allTodos {
+             edges {
+               node {
+                 id
+                 task
+                 completed
+                 dateCreated
+                 dateUpdated
+               }
+             }
+           }
+          }          
+        }         
+        ```
 
 ## Step 3: Front end
 
