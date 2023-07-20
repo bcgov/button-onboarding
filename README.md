@@ -59,6 +59,7 @@ As a user, I can:
 
 1. `npm init` to initialize a `package.json` for the project.
 2. Install [Postgraphile](https://www.graphile.org/postgraphile/) and run it pointing at the project's database.
+      * When running Postgraphile locally, add the `--cors` flag to avoid CORS errors when running the frontend server, and add the `--classic-ids` flag to prevent collisions between `nodeId` and `id` field values. (See [here for further explanation](https://www.graphile.org/postgraphile/node-id/))
 3. Open the Graphiql (a graphical UI for GraphQL queries) instance that should be live at `/graphiql` on localhost once Postgraphile is running.
 4. Confirm that GraphQL is introspecting your Postgres schema by querying the todos you inserted in the previous step.
 
