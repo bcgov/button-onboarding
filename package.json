@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "babel-plugin-relay": "^15.0.0",
+    "graphql": "^16.6.0",
+    "relay-compiler": "^15.0.0"
+  },
+  "dependencies": {
+    "react-relay": "^15.0.0",
+    "relay-runtime": "^15.0.0"
+  }
+}
